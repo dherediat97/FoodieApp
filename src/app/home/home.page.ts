@@ -12,31 +12,9 @@ import { camera, moon, sunnyOutline } from 'ionicons/icons';
   standalone: true,
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton, IonIcon, IonActionSheet, IonButtons, IonItem, IonToggle],
 })
-export class HomePage implements OnInit{
-
+export class HomePage implements OnInit {
   public imageSrc: string | undefined = '';
   public isDarkMode = false;
-  public actionSheetButtons = [
-    {
-      text: 'Importar desde la galería',
-      data: {
-        action: 'import',
-      },
-    },
-    {
-      text: 'Abrir la camara',
-      data: {
-        action: 'photo',
-      },
-    },
-    {
-      text: 'Cerrar',
-      role: 'cancel',
-      data: {
-        action: 'cancel',
-      },
-    },
-  ];
 
   constructor() {
     addIcons({ camera, moon, sunnyOutline});
@@ -54,18 +32,6 @@ export class HomePage implements OnInit{
     prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkPalette(mediaQuery.matches));
   }
 
-  logResult(ev: { detail: any; }) {
-    switch(ev.detail.data.action){
-      case 'import':
-        this.takePicture();
-        break;
-      case 'photo':
-        this.takePicture();
-        break;
-      default:
-        break;
-    }
-  }
 
   // Check/uncheck the toggle and update the palette based on isDark
   initializeDarkPalette(isDark: boolean) {
@@ -88,7 +54,11 @@ export class HomePage implements OnInit{
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: true,
-      resultType: CameraResultType.Uri
+      resultType: CameraResultType.Uri,
+      promptLabelHeader: "Opciones",
+      promptLabelCancel: "Cancelar",
+      promptLabelPicture:"Abrir la cámara",
+      promptLabelPhoto:"Importar desde la galería",
     });
     const imageUrl = image.webPath;
     this.imageSrc = imageUrl;
