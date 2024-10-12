@@ -19,11 +19,9 @@
   </ion-header>
 
 <ion-fab slot="fixed" vertical="bottom" horizontal="center"  id="open-action-sheet">
-  <ion-fab-button>
-    <ion-icon name="camera"></ion-icon>
+  <ion-fab-button (click)="takePicture()">
+    <ion-icon name="camera" ></ion-icon>
   </ion-fab-button>
 </ion-fab>
-
-<ion-action-sheet trigger="open-action-sheet" header="Opciones" [buttons]="actionSheetButtons" (didDismiss)="logResult($event)"></ion-action-sheet>
 
 </ion-content>
