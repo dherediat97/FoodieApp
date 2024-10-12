@@ -50,7 +50,7 @@ jobs:
           name: app-dev
           path: apk/app-debug.apk
       - run: ionic capacitor build apk
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
         with:
           name: release-apk
           path:  build/app/outputs/apk/release/app-release.apk
