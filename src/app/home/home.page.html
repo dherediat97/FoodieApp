@@ -1,20 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+    <ion-title>Foddie</ion-title>
+      <ion-fab-button ngModel="isDarkMode" slot="secondary" (click)="toggleChange()" class="ion-padding">
+        @if (isDarkMode){
+           <ion-icon name="sunny-outline"></ion-icon>
+        } @else{
+          <ion-icon name="moon"></ion-icon>
+        }
+      </ion-fab-button>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Foddie</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-fab slot="fixed" vertical="bottom" horizontal="center"  id="open-action-sheet">
+  <ion-fab-button>
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-action-sheet trigger="open-action-sheet" header="Opciones" [buttons]="actionSheetButtons" (didDismiss)="logResult($event)"></ion-action-sheet>
+
 </ion-content>
