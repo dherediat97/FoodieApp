@@ -1,14 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Foddie</ion-title>
-      <ion-fab-button ngModel="isDarkMode" slot="secondary" (click)="toggleChange()" class="ion-padding">
-        @if (isDarkMode){
-           <ion-icon name="sunny-outline"></ion-icon>
-        } @else{
-          <ion-icon name="moon"></ion-icon>
-        }
-      </ion-fab-button>
-    </ion-toolbar>
+    <ion-fab-button
+      ngModel="isDarkMode"
+      slot="secondary"
+      (click)="toggleChange()"
+      class="ion-padding"
+    >
+      @if (isDarkMode){
+      <ion-icon name="sunny-outline"></ion-icon>
+      } @else{
+      <ion-icon name="moon"></ion-icon>
+      }
+    </ion-fab-button>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
@@ -18,10 +23,14 @@
     </ion-toolbar>
   </ion-header>
 
-<ion-fab slot="fixed" vertical="bottom" horizontal="center"  id="open-action-sheet">
-  <ion-fab-button (click)="takePicture()">
-    <ion-icon name="camera" ></ion-icon>
-  </ion-fab-button>
-</ion-fab>
-
+  <ion-fab
+    slot="fixed"
+    vertical="bottom"
+    horizontal="center"
+    id="open-action-sheet"
+  >
+    <ion-fab-button (click)="takePicture()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
