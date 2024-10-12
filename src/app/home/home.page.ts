@@ -75,7 +75,6 @@ export class HomePage implements OnInit {
     this.toggleDarkPalette(!this.isDarkMode)
   }
 
-  // Add or remove the "ion-palette-dark" class on the html element
   toggleDarkPalette(shouldAdd: boolean) {
     this.isDarkMode = shouldAdd
     document.documentElement.classList.toggle("ion-palette-dark", shouldAdd)
