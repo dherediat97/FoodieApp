@@ -1,9 +1,14 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import type { CapacitorConfig } from "@capacitor/cli"
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'blank',
-  webDir: 'www'
-};
+  appId: "com.dherediat97.foddie",
+  appName: "Foddie",
+  webDir: "www",
+  plugins: {
+    CapacitorHttp: {
+      enabled: true,
+    },
+  },
+}
 
-export default config;
+export default config

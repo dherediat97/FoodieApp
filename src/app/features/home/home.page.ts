@@ -10,7 +10,6 @@ import {
   IonActionSheet,
   IonButtons,
   IonItem,
-  IonToggle,
   IonToast,
 } from "@ionic/angular/standalone"
 import { Toast } from "@capacitor/toast"
@@ -22,6 +21,10 @@ import {
   CapacitorBarcodeScanner,
   CapacitorBarcodeScannerTypeHint,
 } from "@capacitor/barcode-scanner"
+
+import { FoddieService } from "./home.service"
+import { NavigationExtras, Router } from "@angular/router"
+import { Product } from "src/typings/product"
 
 @Component({
   selector: "app-home",
@@ -40,14 +43,17 @@ import {
     IonActionSheet,
     IonButtons,
     IonItem,
-    IonToggle,
   ],
 })
 export class HomePage implements OnInit {
   public barcodesDetected: string[] = []
   public isDarkMode = false
+  product!: Product
 
-  constructor() {
+  constructor(
+    private foddieService: FoddieService,
+    private router: Router,
+  ) {
     addIcons({ sunnyOutline, moon, camera })
   }
 
@@ -81,16 +87,28 @@ export class HomePage implements OnInit {
   }
 
   async takePicture() {
-    var result = await CapacitorBarcodeScanner.scanBarcode({
-      hint: CapacitorBarcodeScannerTypeHint.ALL,
-    })
-    this.barcodesDetected.push(result.ScanResult)
-    this.presentToast()
+    // var result = await CapacitorBarcodeScanner.scanBarcode({
+    //   hint: CapacitorBarcodeScannerTypeHint.ALL,
+    // })
+    // this.barcodesDetected.push(result.ScanResult)
+    // this.presentToast()
+
+    // this.foddieService.getFoodData(result.ScanResult).subscribe((response) => {
+    //   let navigationExtras: NavigationExtras = {
+    //     state: { product: response.product },
+    //   }
+    this.navigateProductDetails()
+    // })
   }
   async presentToast() {
     await Toast.show({
-      text: "Se ha leído " + this.barcodesDetected.length + " código de barras",
+      text: `Se ha leído ${this.barcodesDetected.length} código de barras`,
       position: "bottom",
     })
+  }
+
+  navigateProductDetails() {
+    // this.router.navigate(["/productDetail"], extra)
+    this.router.navigate(["/productDetail"])
   }
 }
