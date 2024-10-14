@@ -1,9 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-nav [root]="product"></ion-nav>
-    <ion-title>Detalles del producto</ion-title>
-  </ion-toolbar>
-</ion-header>
+<top-bar title="Detalles del producto"></top-bar>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -13,27 +8,15 @@
   </ion-header>
 
   @if(product == null) {
-  <ion-item style="width: 100%; height: auto">
+  <ion-item style="width: 100%; height: auto" class="ion-padding">
     <ion-thumbnail slot="start">
       <ion-skeleton-text [animated]="true"></ion-skeleton-text>
     </ion-thumbnail>
-    <ion-thumbnail>
-      <ion-skeleton-text [animated]="true"></ion-skeleton-text>
-    </ion-thumbnail>
-  </ion-item>
-
-  <ion-item>
     <ion-label>
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 70%"
-        ></ion-skeleton-text>
-      </p>
-      <p>
-        <ion-skeleton-text
-          [animated]="true"
-          style="width: 60%"
+          style="width: 50%"
         ></ion-skeleton-text>
       </p>
       <p>
@@ -42,21 +25,10 @@
           style="width: 50%"
         ></ion-skeleton-text>
       </p>
-    </ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 70%"
-        ></ion-skeleton-text>
-      </p>
-      <p>
-        <ion-skeleton-text
-          [animated]="true"
-          style="width: 60%"
+          style="width: 50%"
         ></ion-skeleton-text>
       </p>
       <p>
@@ -65,20 +37,10 @@
           style="width: 50%"
         ></ion-skeleton-text>
       </p>
-    </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 70%"
-        ></ion-skeleton-text>
-      </p>
-      <p>
-        <ion-skeleton-text
-          [animated]="true"
-          style="width: 60%"
+          style="width: 50%"
         ></ion-skeleton-text>
       </p>
       <p>
@@ -118,19 +80,19 @@
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 70%"
+          style="width: 100%"
         ></ion-skeleton-text>
       </p>
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 60%"
+          style="width: 100%"
         ></ion-skeleton-text>
       </p>
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 50%"
+          style="width: 100%"
         ></ion-skeleton-text>
       </p>
     </ion-label>
@@ -140,19 +102,19 @@
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 70%"
+          style="width: 100%"
         ></ion-skeleton-text>
       </p>
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 60%"
+          style="width: 100%"
         ></ion-skeleton-text>
       </p>
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 50%"
+          style="width: 100%"
         ></ion-skeleton-text>
       </p>
     </ion-label>
@@ -163,125 +125,136 @@
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 70%"
+          style="width: 100%"
         ></ion-skeleton-text>
       </p>
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 60%"
+          style="width: 100%"
         ></ion-skeleton-text>
       </p>
       <p>
         <ion-skeleton-text
           [animated]="true"
-          style="width: 50%"
+          style="width: 100%"
+        ></ion-skeleton-text>
+      </p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 100%"
+        ></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 100%"
+        ></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 100%"
+        ></ion-skeleton-text>
+      </p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 100%"
+        ></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 100%"
+        ></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 100%"
+        ></ion-skeleton-text>
+      </p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 100%"
+        ></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 100%"
+        ></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 100%"
         ></ion-skeleton-text>
       </p>
     </ion-label>
   </ion-item>
   } @else{
-  <ion-list class="ion-padding">
+  <ion-list>
     <ion-item>
-      <img src="{{product.imageFrontSmallURL}}" />
-      <ion-label>
-        {{product.productNameEn}} {{product.productQuantity}}
-        {{product.productQuantityUnit}}
-      </ion-label>
+      <ion-grid>
+        <ion-col>
+          <img src="{{product.imageFrontSmallURL}}" />
+        </ion-col>
+        <ion-col>
+          <ion-row>
+            {{product.productNameEn}} {{product.productQuantity}}
+            {{product.productQuantityUnit}}</ion-row
+          >
+          <ion-row> Marcas: {{product.brands}} </ion-row>
+        </ion-col>
+      </ion-grid>
     </ion-item>
     <ion-item>
       <ion-label>Se vende en: {{product.stores}}</ion-label>
-      <ion-label>Marcas: {{product.brandOwner}}</ion-label>
     </ion-item>
 
     <ion-accordion-group>
       <ion-accordion value="first">
-        <ion-item slot="header" color="dark">
+        <ion-item slot="header">
           <ion-label>Información Nutricional</ion-label>
         </ion-item>
         <div slot="content">
-          <ion-grid
-            ><ion-row>
-              <ion-col>Información Nutricional</ion-col>
-              <ion-col>Por envase</ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>Energía</ion-col>
-              <ion-col>
-                {{product.nutriments?.energy}}
-                {{product.nutriments?.energyUnit}}
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>Grasas</ion-col>
-              <ion-col>
-                {{product.nutriments?.fat}} {{product.nutriments?.fatUnit}}
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col class="tab">Grasas saturadas</ion-col>
-              <ion-col>
-                {{product.nutriments?.saturatedFat}}
-                {{product.nutriments?.saturatedFatUnit}}
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>Hidratos de carbono</ion-col>
-              <ion-col>
-                {{product.nutriments?.carbohydrates}}
-                {{product.nutriments?.carbohydratesUnit}}
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col class="tab">Azúcares</ion-col>
-              <ion-col>
-                {{product.nutriments?.sugars}}
-                {{product.nutriments?.sugarsUnit}}
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>Fibra alimentaria</ion-col>
-              <ion-col>
-                {{product.nutriments?.fiber}}{{product.nutriments?.fiberUnit}}
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>Proteínas</ion-col>
-              <ion-col>
-                {{product.nutriments?.proteins}}{{product.nutriments?.proteinsUnit}}
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>Sal</ion-col>
-              <ion-col>
-                {{product.nutriments?.salt}}{{product.nutriments?.saltUnit}}
-              </ion-col>
-            </ion-row>
-            @if (product.nutriments?.alcohol!=null) {
-            <ion-row>
-              <ion-col>Alcohol</ion-col>
-              <ion-col>
-                {{product.nutriments?.alcohol}}{{product.nutriments?.alcohol_unit}}
-              </ion-col>
-            </ion-row>
-            }
-          </ion-grid>
+          <ingredients-table
+            [nutriments]="product.nutriments"
+          ></ingredients-table>
         </div>
       </ion-accordion>
       <ion-accordion value="second">
-        <ion-item slot="header" color="light">
+        <ion-item slot="header">
           <ion-label>Ingredientes</ion-label>
         </ion-item>
         <div class="ion-padding" slot="content"></div>
       </ion-accordion>
       <ion-accordion value="third">
-        <ion-item slot="header" color="dark">
+        <ion-item slot="header">
           <ion-label>Aditivos</ion-label>
         </ion-item>
         <div class="ion-padding" slot="content"></div>
       </ion-accordion>
       <ion-accordion value="fourth">
-        <ion-item slot="header" color="light">
+        <ion-item slot="header">
           <ion-label>Nutriscore</ion-label>
         </ion-item>
         <div class="ion-padding" slot="content"></div>

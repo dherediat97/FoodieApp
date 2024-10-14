@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core"
+import { Component } from "@angular/core"
 import {
   IonHeader,
   IonToolbar,
@@ -11,11 +11,16 @@ import {
   IonButtons,
   IonItem,
   IonToast,
+  IonImg,
+  IonLabel,
+  IonButton,
+  IonTab,
+  IonTabs,
 } from "@ionic/angular/standalone"
 import { Toast } from "@capacitor/toast"
 
 import { addIcons } from "ionicons"
-import { camera, moon, sunnyOutline } from "ionicons/icons"
+import { camera } from "ionicons/icons"
 
 import {
   CapacitorBarcodeScanner,
@@ -25,6 +30,8 @@ import {
 import { FoddieService } from "./home.service"
 import { NavigationExtras, Router } from "@angular/router"
 import { Product } from "src/typings/product"
+import { TopBar } from "../../components/top-bar/top-bar"
+import { BottomBar } from "../../components/bottom-bar/bottom-bar"
 
 @Component({
   selector: "app-home",
@@ -32,6 +39,9 @@ import { Product } from "src/typings/product"
   styleUrls: ["home.page.scss"],
   standalone: true,
   imports: [
+    IonButton,
+    IonLabel,
+    IonImg,
     IonToast,
     IonHeader,
     IonToolbar,
@@ -43,47 +53,20 @@ import { Product } from "src/typings/product"
     IonActionSheet,
     IonButtons,
     IonItem,
+    IonImg,
+    TopBar,
+    BottomBar,
   ],
 })
-export class HomePage implements OnInit {
+export class HomePage {
   public barcodesDetected: string[] = []
-  public isDarkMode = false
   product!: Product
 
   constructor(
     private foddieService: FoddieService,
     private router: Router,
   ) {
-    addIcons({ sunnyOutline, moon, camera })
-  }
-
-  ngOnInit() {
-    // Use matchMedia to check the user preference
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)")
-
-    // Initialize the dark palette based on the initial
-    // value of the prefers-color-scheme media query
-    this.initializeDarkPalette(prefersDark.matches)
-
-    // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener("change", (mediaQuery) =>
-      this.initializeDarkPalette(mediaQuery.matches),
-    )
-  }
-
-  // Check/uncheck the toggle and update the palette based on isDark
-  initializeDarkPalette(isDark: boolean) {
-    this.toggleDarkPalette(isDark)
-  }
-
-  // Listen for the toggle check/uncheck to toggle the dark palette
-  toggleChange() {
-    this.toggleDarkPalette(!this.isDarkMode)
-  }
-
-  toggleDarkPalette(shouldAdd: boolean) {
-    this.isDarkMode = shouldAdd
-    document.documentElement.classList.toggle("ion-palette-dark", shouldAdd)
+    addIcons({ camera })
   }
 
   async takePicture() {

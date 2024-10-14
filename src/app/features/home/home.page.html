@@ -1,27 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Foddie</ion-title>
-    <ion-fab-button
-      ngModel="isDarkMode"
-      slot="secondary"
-      (click)="toggleChange()"
-      class="ion-padding"
-    >
-      @if (isDarkMode){
-      <ion-icon name="sunny-outline"></ion-icon>
-      } @else{
-      <ion-icon name="moon"></ion-icon>
-      }
-    </ion-fab-button>
-  </ion-toolbar>
-</ion-header>
+<top-bar title="Foddie"></top-bar>
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Foddie</ion-title>
+      <ion-title>Foddie</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-img
+    src="assets/images/empty_state.svg"
+    style="width: 50%; display: block; margin-left: auto; margin-right: auto"
+  ></ion-img>
+
+  <ion-label
+    style="width: 30%; display: block; margin-left: auto; margin-right: auto"
+    >Empieza a escanear tus productos para saber su puntuación
+    alimentaria</ion-label
+  >
 
   <ion-fab
     slot="fixed"
@@ -33,4 +28,6 @@
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <bottom-bar></bottom-bar>
 </ion-content>

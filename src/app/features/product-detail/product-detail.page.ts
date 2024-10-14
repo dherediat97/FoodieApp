@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core"
+import { Component } from "@angular/core"
 import {
   IonContent,
   IonHeader,
@@ -12,22 +12,31 @@ import {
   IonLabel,
   IonImg,
   IonNav,
+  IonAccordion,
+  IonAccordionGroup,
+  IonGrid,
+  IonRow,
+  IonCol,
 } from "@ionic/angular/standalone"
 import { Product } from "src/typings/product"
 import { ActivatedRoute, Router } from "@angular/router"
 import productMock from "src/typings/product_mock"
 
 import { register } from "swiper/element/bundle"
+import { IngredientsTable } from "../../components/ingredients-table/ingredients-table"
+import { TopBar } from "../../components/top-bar/top-bar"
 
 register()
 
 @Component({
   selector: "app-product-detail",
   templateUrl: "./product-detail.page.html",
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   styleUrls: ["./product-detail.page.scss"],
   standalone: true,
   imports: [
+    IonCol,
+    IonRow,
+    IonGrid,
     IonImg,
     IonList,
     IonContent,
@@ -40,6 +49,10 @@ register()
     IonThumbnail,
     IonLabel,
     IonNav,
+    IngredientsTable,
+    IonAccordion,
+    IonAccordionGroup,
+    TopBar,
   ],
 })
 export class ProductDetailPage {
@@ -57,6 +70,6 @@ export class ProductDetailPage {
       //   }
       // })
       this.product = productMock
-    }, 2000)
+    }, 0)
   }
 }

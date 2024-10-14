@@ -1,0 +1,53 @@
+<ion-grid>
+  <ion-row>
+    <ion-col
+      >Valores Nutricionales por 100 {{nutriments.sugarsUnit}} de producto
+    </ion-col>
+    <ion-col>Por envase</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>Valor energético</ion-col>
+    <ion-col>
+      {{nutriments.energy}} {{nutriments.energyUnit}} /
+      {{nutriments.energyKcal}} {{nutriments.energyKcalUnit}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>Grasas</ion-col>
+    <ion-col> {{nutriments.fat}} {{nutriments.fatUnit}} </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="tab">de las cuales saturadas</ion-col>
+    <ion-col
+      >{{nutriments.saturatedFat}} {{nutriments.saturatedFatUnit}}</ion-col
+    >
+  </ion-row>
+  <ion-row>
+    <ion-col>Hidratos de carbono</ion-col>
+    <ion-col
+      >{{nutriments.carbohydrates}} {{nutriments.carbohydratesUnit}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="tab">de los cuales azúcares</ion-col>
+    <ion-col>{{nutriments.sugars}} {{nutriments.sugarsUnit}} </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>Fibra alimentaria</ion-col>
+    <ion-col>{{nutriments.fiber}} {{nutriments.fiberUnit}} </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>Proteínas</ion-col>
+    <ion-col>{{nutriments.proteins}} {{nutriments.proteinsUnit}} </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>Sal</ion-col>
+    <ion-col>{{nutriments.salt}} {{nutriments.saltUnit}} </ion-col>
+  </ion-row>
+  @if (nutriments.alcohol) {
+  <ion-row>
+    <ion-col>Alcohol</ion-col>
+    <ion-col>{{nutriments.alcohol}} {{nutriments.alcohol_unit}} </ion-col>
+  </ion-row>
+  }
+</ion-grid>

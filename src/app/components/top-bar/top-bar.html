@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button
+        style="display: block"
+        (click)="navigation.back()"
+      ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>{{title}}</ion-title>
+    <ion-label slot="end">
+      <ion-button
+        class="no-shadow"
+        ngModel="isDarkMode"
+        slot="secondary"
+        (click)="toggleChange()"
+      >
+        @if (isDarkMode){
+        <ion-icon
+          style="width: 30px; height: 30px"
+          name="sunny-outline"
+        ></ion-icon>
+        } @else{
+        <ion-icon style="width: 30px; height: 30px" name="moon"></ion-icon>
+        }
+      </ion-button>
+    </ion-label>
+    <ion-label slot="end" class="ion-center">
+      <ion-button class="no-shadow">
+        <ion-img
+          style="width: 30px; height: 30px"
+          alt="Profile pic"
+          src="assets/images/profile.png"
+        ></ion-img>
+      </ion-button>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>

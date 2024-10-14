@@ -180,7 +180,7 @@ export type Product = {
   nucleotidesTags?: any[]
   nutrientLevels?: NutrientLevels
   nutrientLevelsTags?: string[]
-  nutriments?: Nutriments
+  nutriments: Nutriments
   nutriscore?: { [key: string]: Nutriscore }
   nutriscore2021_Tags?: string[]
   nutriscore2023_Tags?: string[]

@@ -42,25 +42,3 @@ swiper-slide img {
   height: auto;
   max-height: 100%;
 }
-
-ion-row:first-child {
-  background-color:#464646;
-  color: white;
-  border: 1px solid #464646;
-  text-align: left;
-}
-
-ion-col:not(:first-child) {
-  text-align: left;
-}
-
-ion-row:not(:first-child) {
-  background-color: white;
-  border:1px solid #464646;
-  color: black;
-  text-align: left;
-}
-.tab {
-  display: inline-block;
-  margin-left: 1em;
-}

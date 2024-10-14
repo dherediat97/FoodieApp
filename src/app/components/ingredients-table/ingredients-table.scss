@@ -1,0 +1,25 @@
+
+ion-row:first-child {
+    background-color:#464646;
+    color: white;
+    border: 1px solid #464646;
+    font-weight: bold;
+    text-align: left;
+}
+
+ion-col:not(:first-child) {
+    text-align: left;
+}
+
+ion-row:not(:first-child) {
+    background-color: white;
+    border:1px solid #464646;
+    color: black;
+    text-align: left;
+}
+
+.tab {
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 1em;
+}

@@ -31,6 +31,7 @@
     "@capacitor/status-bar": "6.0.1",
     "@capacitor/toast": "^6.0.2",
     "@ionic/angular": "^8.0.0",
+    "@ngx-translate/core": "^15.0.0",
     "ionicons": "^7.2.1",
     "rxjs": "~7.8.0",
     "swiper": "^11.1.14",

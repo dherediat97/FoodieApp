@@ -1,0 +1,27 @@
+<ion-tabs>
+  <!-- Tabs -->
+  <ion-tab tab="home">
+    <ion-router-outlet name="home"></ion-router-outlet>
+  </ion-tab>
+
+  <ion-tab tab="settings">
+    <ion-router-outlet name="settings"></ion-router-outlet>
+  </ion-tab>
+
+  <ion-tab tab="recentProducts">
+    <ion-router-outlet name="recentProducts"></ion-router-outlet>
+  </ion-tab>
+
+  <!-- Tab Buttons -->
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="recentProducts" href="/home/recentProducts">
+      <ion-icon name="barcode-outline"></ion-icon>
+      <ion-label>Últimos productos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings" href="/tabs/settings">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Ajustes</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
