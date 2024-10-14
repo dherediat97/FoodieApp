@@ -18,14 +18,9 @@
     alimentaria</ion-label
   >
 
-  <ion-fab
-    slot="fixed"
-    vertical="bottom"
-    horizontal="center"
-    id="open-action-sheet"
-  >
-    <ion-fab-button (click)="takePicture()">
-      <ion-icon name="camera"></ion-icon>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="center" id="open-camera">
+    <ion-fab-button (click)="takePicture()" color="light">
+      <ion-icon name="camera" color="primary"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 

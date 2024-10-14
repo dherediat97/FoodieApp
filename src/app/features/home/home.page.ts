@@ -27,11 +27,11 @@ import {
   CapacitorBarcodeScannerTypeHint,
 } from "@capacitor/barcode-scanner"
 
-import { FoddieService } from "./home.service"
 import { NavigationExtras, Router } from "@angular/router"
-import { Product } from "src/typings/product"
-import { TopBar } from "../../components/top-bar/top-bar"
-import { BottomBar } from "../../components/bottom-bar/bottom-bar"
+import { Product } from "@foddie-types/product"
+import { BottomBar } from "@foddie-components/bottom-bar/bottom-bar"
+import { TopBar } from "@foddie-components/top-bar/top-bar"
+import { FoddieService } from "./home.service"
 
 @Component({
   selector: "app-home",

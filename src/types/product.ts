@@ -9,7 +9,6 @@ import {
   Source,
   SourcesFields,
 } from "./food_data"
-
 import { Images } from "./image"
 import { NutrientLevels, Nutriments } from "./nutriments"
 import { Nutriscore, NutriscoreData } from "./nutriscore"

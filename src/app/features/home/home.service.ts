@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core"
-import { HttpService } from "../../services/http_service"
-import { OpenFoodData } from "src/typings/food_data"
+import { HttpService } from "@foddie-services/http-service"
 import { Observable } from "rxjs"
+import { OpenFoodData } from "@foddie-types/food_data"
 
 @Injectable({
   providedIn: "root",

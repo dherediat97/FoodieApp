@@ -18,13 +18,14 @@ import {
   IonRow,
   IonCol,
 } from "@ionic/angular/standalone"
-import { Product } from "src/typings/product"
 import { ActivatedRoute, Router } from "@angular/router"
-import productMock from "src/typings/product_mock"
 
 import { register } from "swiper/element/bundle"
-import { IngredientsTable } from "../../components/ingredients-table/ingredients-table"
-import { TopBar } from "../../components/top-bar/top-bar"
+import { IngredientsTable } from "@foddie-components/ingredients-table/ingredients-table"
+
+import productMock from "@foddie-types/product_mock"
+import { Product } from "@foddie-types/product"
+import { TopBar } from "@foddie-components/top-bar/top-bar"
 
 register()
 

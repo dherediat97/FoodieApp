@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core"
+import { Nutriments } from "@foddie-types/nutriments"
 import { IonRow, IonGrid, IonCol } from "@ionic/angular/standalone"
-import { Nutriments } from "src/typings/nutriments"
 
 @Component({
   selector: "ingredients-table",
